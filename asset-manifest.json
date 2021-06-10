@@ -1,23 +1,22 @@
 {
   "files": {
-    "main.css": "/euro-predictions/static/css/main.cccc0c90.chunk.css",
-    "main.js": "/euro-predictions/static/js/main.d4081e56.chunk.js",
-    "main.js.map": "/euro-predictions/static/js/main.d4081e56.chunk.js.map",
-    "runtime-main.js": "/euro-predictions/static/js/runtime-main.f6a45044.js",
-    "runtime-main.js.map": "/euro-predictions/static/js/runtime-main.f6a45044.js.map",
-    "static/js/2.3870b728.chunk.js": "/euro-predictions/static/js/2.3870b728.chunk.js",
-    "static/js/2.3870b728.chunk.js.map": "/euro-predictions/static/js/2.3870b728.chunk.js.map",
-    "static/js/3.6e3f5c03.chunk.js": "/euro-predictions/static/js/3.6e3f5c03.chunk.js",
-    "static/js/3.6e3f5c03.chunk.js.map": "/euro-predictions/static/js/3.6e3f5c03.chunk.js.map",
+    "main.css": "/euro-predictions/static/css/main.0c4dcab6.chunk.css",
+    "main.js": "/euro-predictions/static/js/main.d058e344.chunk.js",
+    "main.js.map": "/euro-predictions/static/js/main.d058e344.chunk.js.map",
+    "runtime-main.js": "/euro-predictions/static/js/runtime-main.35eaef5d.js",
+    "runtime-main.js.map": "/euro-predictions/static/js/runtime-main.35eaef5d.js.map",
+    "static/js/2.51b1e6c9.chunk.js": "/euro-predictions/static/js/2.51b1e6c9.chunk.js",
+    "static/js/2.51b1e6c9.chunk.js.map": "/euro-predictions/static/js/2.51b1e6c9.chunk.js.map",
+    "static/js/3.37c72941.chunk.js": "/euro-predictions/static/js/3.37c72941.chunk.js",
+    "static/js/3.37c72941.chunk.js.map": "/euro-predictions/static/js/3.37c72941.chunk.js.map",
     "index.html": "/euro-predictions/index.html",
-    "static/css/main.cccc0c90.chunk.css.map": "/euro-predictions/static/css/main.cccc0c90.chunk.css.map",
-    "static/js/2.3870b728.chunk.js.LICENSE.txt": "/euro-predictions/static/js/2.3870b728.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/euro-predictions/static/media/logo.6ce24c58.svg"
+    "static/css/main.0c4dcab6.chunk.css.map": "/euro-predictions/static/css/main.0c4dcab6.chunk.css.map",
+    "static/js/2.51b1e6c9.chunk.js.LICENSE.txt": "/euro-predictions/static/js/2.51b1e6c9.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.f6a45044.js",
-    "static/js/2.3870b728.chunk.js",
-    "static/css/main.cccc0c90.chunk.css",
-    "static/js/main.d4081e56.chunk.js"
+    "static/js/runtime-main.35eaef5d.js",
+    "static/js/2.51b1e6c9.chunk.js",
+    "static/css/main.0c4dcab6.chunk.css",
+    "static/js/main.d058e344.chunk.js"
   ]
 }
