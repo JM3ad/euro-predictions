@@ -36,8 +36,9 @@ class ScoreService {
     }
 
     determinePointsForGame = (prediction: string, result: string): number => {
-        console.log(prediction);
-        console.log(result);
+        if (!result) {
+            return 0
+        }
         if (prediction == result) {
             return 3;
         }
