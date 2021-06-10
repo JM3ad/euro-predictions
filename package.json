@@ -1,6 +1,6 @@
 {
-  "name": "hosted-react-app",
-  "homepage": "http://jm3ad.github.io/hosted-react-app",
+  "name": "euro-predictions",
+  "homepage": "http://jm3ad.github.io/euro-predictions",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
