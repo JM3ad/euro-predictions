@@ -6,7 +6,7 @@ import {
   Link
 } from "react-router-dom";
 import PageOne from 'app/pages/page_one';
-import PageTwo from 'app/pages/page_two'
+import PageTwo from 'app/pages/page_two';
 
 const App: React.FC = () => {
   const redirect = sessionStorage.redirect;
@@ -18,22 +18,9 @@ const App: React.FC = () => {
   return (
   <Router basename={process.env.REACT_APP_BASE_URL}>
     <div>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/page_two">Alternative Page</Link>
-        </li>
-      </ul>
-
-      <hr />
       <Switch>
-        <Route exact path="/">
+        <Route path="/">
           <PageOne />
-        </Route>
-        <Route path="/page_two">
-          <PageTwo />
         </Route>
       </Switch>
     </div>
