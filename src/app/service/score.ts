@@ -23,7 +23,7 @@ enum Result {
 }
 
 class ScoreService {
-    determineResult = (prediction: string) => {
+    determineResult = (prediction: string): Result => {
         const homeScore = prediction.split('-')[0];
         const awayScore = prediction.split('-')[1];
         if (homeScore == awayScore) {
