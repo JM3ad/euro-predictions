@@ -19,8 +19,8 @@ const getResultsFromSheet: (sheet: SheetsResult) => Results = (sheet: SheetsResu
       time: row[1],
       teamA: row[2],
       teamB: row[3],
-      predictions: row.slice(4,7),
-      result: row[7]
+      result: row[4],
+      predictions: row.slice(5),
     };
     return game;
   });
@@ -96,7 +96,7 @@ const PageOne: React.FC = () => {
 
   useEffect(() => {
     if (token) {
-      fetch(`https://sheets.googleapis.com/v4/spreadsheets/${process.env.REACT_APP_SPREADSHEET_ID}/values/Sheet1!A1:H20?access_token=${token}`).then((result) => {
+      fetch(`https://sheets.googleapis.com/v4/spreadsheets/${process.env.REACT_APP_SPREADSHEET_ID}/values/Sheet1!A1:K20?access_token=${token}`).then((result) => {
         if (!result.ok) {
           logOut();
           throw Error("");
