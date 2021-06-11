@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/euro-predictions/static/css/main.0c4dcab6.chunk.css",
-    "main.js": "/euro-predictions/static/js/main.67cbbec7.chunk.js",
-    "main.js.map": "/euro-predictions/static/js/main.67cbbec7.chunk.js.map",
+    "main.js": "/euro-predictions/static/js/main.4a9df9c6.chunk.js",
+    "main.js.map": "/euro-predictions/static/js/main.4a9df9c6.chunk.js.map",
     "runtime-main.js": "/euro-predictions/static/js/runtime-main.35eaef5d.js",
     "runtime-main.js.map": "/euro-predictions/static/js/runtime-main.35eaef5d.js.map",
     "static/js/2.51b1e6c9.chunk.js": "/euro-predictions/static/js/2.51b1e6c9.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.35eaef5d.js",
     "static/js/2.51b1e6c9.chunk.js",
     "static/css/main.0c4dcab6.chunk.css",
-    "static/js/main.67cbbec7.chunk.js"
+    "static/js/main.4a9df9c6.chunk.js"
   ]
 }
