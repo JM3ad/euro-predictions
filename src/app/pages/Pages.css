@@ -11,8 +11,24 @@ body {
 
 .score-table {
   text-align: center;
-  width: 100%;
-  margin-top: 5rem;
+  width: 15rem;
+  margin: 5rem auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.table-header, .table-row{
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.table-header {
+  font-weight: bold;
+}
+
+.table-entry{
+  flex: 1;
 }
 
 .results-table {
@@ -33,4 +49,23 @@ body {
 
 .incorrect-result {
   color: red;
+}
+
+/* Convert this to SCSS and away from tables*/
+
+.table-wrapper {
+  /*max-width: 50vw;
+  overflow-x: auto;*/
+  width: 100vw;
+}
+
+@media only screen and (max-width: 600px) {
+  .table-wrapper>table>thead>tr>th:nth-child(1),
+  .table-wrapper>table>thead>tr>th:nth-child(2),
+  .table-wrapper>table>tbody>tr>td:nth-child(1),
+  .table-wrapper>table>tbody>tr>td:nth-child(2) {
+    visibility: hidden;
+    width: 0;
+    max-width: 0;
+  }
 }

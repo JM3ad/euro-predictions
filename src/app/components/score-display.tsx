@@ -1,5 +1,5 @@
+import { Score } from 'app/models/Score';
 import React from 'react';
-import { Score } from 'app/service/score';
 
 export type ScoreProps = {
     scores: Score[];
@@ -7,20 +7,18 @@ export type ScoreProps = {
 
 const ScoreDisplay: React.FC<ScoreProps> = (props: ScoreProps) => {
     const scores = props.scores;
-    return <table className="score-table">
-        <tbody>
-          <tr>
-            {scores.map((score: Score, index) => {
-              return <td key={index}>{score.player}</td>;
-            })}
-          </tr>
-          <tr>
-            {scores.map((score: Score, index) => {
-                return <td key={index}>{score.score}</td>;
-            })}          
-          </tr>
-        </tbody>
-    </table>
+    const orderedScores = scores.sort((a, b) => a.score - b.score).reverse();
+    return <div className="score-table">
+      <div className="table-header">
+        <div className="table-entry">Scores</div>
+      </div>
+      {orderedScores.map((score: Score) => {
+        return <div key={score.player} className="table-row">
+          <div className="table-entry">{score.player}</div>
+          <div className="table-entry">{score.score}</div>
+        </div>;
+      })}
+    </div>
 }
   
 export default ScoreDisplay;

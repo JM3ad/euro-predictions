@@ -1,7 +1,8 @@
 import React from 'react';
-import ScoreService, { Results } from 'app/service/score';
+import ScoreService from 'app/service/score-service';
 import AllResults from './results';
 import ScoreDisplay from './score-display';
+import { Results } from 'app/models/Results';
 
 export type PredictionsProps = {
     results: Results;
