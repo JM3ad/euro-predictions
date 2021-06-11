@@ -1,4 +1,5 @@
 interface Game {
+    round: string;
     time: string;
     teamA: string;
     teamB: string;
@@ -16,36 +17,57 @@ export interface Score {
     score: number;
 }
 
-enum Result {
+enum GameResult {
     HOME_WIN,
     DRAW,
     AWAY_WIN
 }
 
+export enum PredictionResult {
+    CORRECT_SCORE,
+    CORRECT_RESULT,
+    INCORRECT_RESULT,
+    UNDETERMINED
+}
+
 class ScoreService {
-    determineResult = (prediction: string): Result => {
+    determineResult = (prediction: string): GameResult => {
         const homeScore = prediction.split('-')[0];
         const awayScore = prediction.split('-')[1];
         if (homeScore == awayScore) {
-            return Result.DRAW;
+            return GameResult.DRAW;
         }
         if (homeScore > awayScore) {
-            return Result.HOME_WIN;
+            return GameResult.HOME_WIN;
         }
-        return Result.AWAY_WIN;
+        return GameResult.AWAY_WIN;
+    }
+
+    determinePredictionResult = (prediction: string, result: string): PredictionResult => {
+        if (!result) {
+            return PredictionResult.UNDETERMINED;
+        }
+        if (prediction == result) {
+            return PredictionResult.CORRECT_SCORE;
+        }
+        if (this.determineResult(prediction) === this.determineResult(result)){
+            return PredictionResult.CORRECT_RESULT;
+        }
+        return PredictionResult.INCORRECT_RESULT;
     }
 
     determinePointsForGame = (prediction: string, result: string): number => {
-        if (!result) {
-            return 0
+        const predictionResult = this.determinePredictionResult(prediction, result);
+        switch(predictionResult) {
+            case PredictionResult.CORRECT_SCORE:
+                return 3;
+            case PredictionResult.CORRECT_RESULT:
+                return 1;
+            case PredictionResult.INCORRECT_RESULT:
+            case PredictionResult.UNDETERMINED:
+            default:
+                return 0;
         }
-        if (prediction == result) {
-            return 3;
-        }
-        if (this.determineResult(prediction) === this.determineResult(result)){
-            return 1;
-        }
-        return 0;
     };
 
     determinePoints = (results: Results): Score[] => {

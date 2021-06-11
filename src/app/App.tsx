@@ -4,7 +4,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import PageOne from 'app/pages/page_one';
+import PredictionsPage from 'app/pages/predictions';
 
 const App: React.FC = () => {
   const redirect = sessionStorage.redirect;
@@ -18,7 +18,7 @@ const App: React.FC = () => {
     <div>
       <Switch>
         <Route path="/">
-          <PageOne />
+          <PredictionsPage />
         </Route>
       </Switch>
     </div>
