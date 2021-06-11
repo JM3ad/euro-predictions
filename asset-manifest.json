@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/euro-predictions/static/css/main.61512aa7.chunk.css",
-    "main.js": "/euro-predictions/static/js/main.b8ae7a3e.chunk.js",
-    "main.js.map": "/euro-predictions/static/js/main.b8ae7a3e.chunk.js.map",
+    "main.css": "/euro-predictions/static/css/main.238bb377.chunk.css",
+    "main.js": "/euro-predictions/static/js/main.5994712d.chunk.js",
+    "main.js.map": "/euro-predictions/static/js/main.5994712d.chunk.js.map",
     "runtime-main.js": "/euro-predictions/static/js/runtime-main.35eaef5d.js",
     "runtime-main.js.map": "/euro-predictions/static/js/runtime-main.35eaef5d.js.map",
-    "static/js/2.51b1e6c9.chunk.js": "/euro-predictions/static/js/2.51b1e6c9.chunk.js",
-    "static/js/2.51b1e6c9.chunk.js.map": "/euro-predictions/static/js/2.51b1e6c9.chunk.js.map",
+    "static/js/2.629f6963.chunk.js": "/euro-predictions/static/js/2.629f6963.chunk.js",
+    "static/js/2.629f6963.chunk.js.map": "/euro-predictions/static/js/2.629f6963.chunk.js.map",
     "static/js/3.37c72941.chunk.js": "/euro-predictions/static/js/3.37c72941.chunk.js",
     "static/js/3.37c72941.chunk.js.map": "/euro-predictions/static/js/3.37c72941.chunk.js.map",
     "index.html": "/euro-predictions/index.html",
-    "static/css/main.61512aa7.chunk.css.map": "/euro-predictions/static/css/main.61512aa7.chunk.css.map",
-    "static/js/2.51b1e6c9.chunk.js.LICENSE.txt": "/euro-predictions/static/js/2.51b1e6c9.chunk.js.LICENSE.txt"
+    "static/css/main.238bb377.chunk.css.map": "/euro-predictions/static/css/main.238bb377.chunk.css.map",
+    "static/js/2.629f6963.chunk.js.LICENSE.txt": "/euro-predictions/static/js/2.629f6963.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.35eaef5d.js",
-    "static/js/2.51b1e6c9.chunk.js",
-    "static/css/main.61512aa7.chunk.css",
-    "static/js/main.b8ae7a3e.chunk.js"
+    "static/js/2.629f6963.chunk.js",
+    "static/css/main.238bb377.chunk.css",
+    "static/js/main.5994712d.chunk.js"
   ]
 }
