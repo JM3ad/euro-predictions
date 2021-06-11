@@ -1,21 +1,5 @@
-interface Game {
-    round: string;
-    time: string;
-    teamA: string;
-    teamB: string;
-    predictions: string[];
-    result: string;
-  }
-  
-export interface Results {
-    players: string[];
-    games: Game[];
-}
-
-export interface Score {
-    player: string;
-    score: number;
-}
+import { Results } from "app/models/Results";
+import { Score } from "app/models/Score";
 
 enum GameResult {
     HOME_WIN,
