@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import 'app/pages/Pages.css';
 import { GoogleLogin, GoogleLoginResponse, GoogleLoginResponseOffline } from 'react-google-login';
-import ScoreService, {Results, Score} from 'app/service/score';
+import ScoreService, {PredictionResult, Results, Score} from 'app/service/score';
 
 interface SheetsResult {
   values: string[][];
@@ -48,13 +48,70 @@ const ScoreDisplay = (props: {scores: Score[]}) => {
     </table>
 }
 
-const AllResults = (props: {sheet: SheetsResult}) => {
+const AllResults = (props: {results: Results}) => {
+  const results = props.results;
+  const getPredictionClassName = (prediction: string, result: string) => {
+    const scoreService = new ScoreService();
+    const predictionResult = scoreService.determinePredictionResult(prediction, result);
+    switch(predictionResult) {
+      case PredictionResult.CORRECT_SCORE:
+        return "correct-score";
+      case PredictionResult.CORRECT_RESULT:
+        return "correct-result";
+      case PredictionResult.INCORRECT_RESULT:
+        return "incorrect-result";
+      case PredictionResult.UNDETERMINED:
+        return "";
+    }
+  }
+
   return <table className="results-table">
+    <thead>
+      <tr>
+        <th>
+          Round
+        </th>
+        <th>
+          Time
+        </th>
+        <th>
+          Team 1
+        </th>
+        <th>
+          Team 2
+        </th>
+        <th>
+          Score
+        </th>
+        {
+          results.players.map((playerName) => {
+            return <th key={playerName}>{playerName}</th>;
+          })
+        }
+      </tr>
+    </thead>
     <tbody>
-      {props.sheet.values.map((row, outerIndex) => {
+      {props.results.games.map((game, outerIndex) => {
         return <tr key={outerIndex}>
-          {row.map((entry, index) => {
-            return <td key={index}>{entry}</td>;
+          <td>
+            {game.round}
+          </td>
+          <td>
+            {game.time}
+          </td>
+          <td>
+            {game.teamA}
+          </td>
+          <td>
+            {game.teamB}
+          </td>
+          <td>
+            {game.result}
+          </td>
+          {game.predictions.map((entry, index) => {
+            return <td key={index} className={getPredictionClassName(entry, game.result)}>
+              {entry}
+            </td>;
           })}
         </tr>
       })}
@@ -69,11 +126,11 @@ const PredictionsDisplay = (props: PredictionsProps) => {
 
   return <div>
     <ScoreDisplay scores={scores} />
-    <AllResults sheet={props.sheet} />
+    <AllResults results={results} />
   </div>;
 };
 
-const PageOne: React.FC = () => {
+const PredictionsPage: React.FC = () => {
   const [sheet, setSheet] = useState<SheetsResult>();
   const [token, setToken] = useState<string>(localStorage.getItem("token") || "");
   const [loggedIn, setLoggedIn] = useState<boolean>(!!localStorage.getItem("token"));
@@ -137,4 +194,4 @@ const PageOne: React.FC = () => {
   );
 }
 
-export default PageOne;
+export default PredictionsPage;
