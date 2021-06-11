@@ -59,7 +59,6 @@ class ScoreService {
                 score: score
             };
         });
-        console.log(scores);
         return scores;
     };
 }

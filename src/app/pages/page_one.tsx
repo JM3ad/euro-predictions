@@ -12,7 +12,7 @@ interface PredictionsProps {
 }
 
 const getResultsFromSheet: (sheet: SheetsResult) => Results = (sheet: SheetsResult) => {
-  const players = sheet.values[0].slice(4, 7);
+  const players = sheet.values[0].slice(5);
   const games = sheet.values.slice(1).map((row) => {
     const game = {
       round: row[0],
