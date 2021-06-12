@@ -1,12 +1,11 @@
-import { Results } from 'app/models/Results';
 import React from 'react';
 
 export type ResultsProps = {
-    results: Results;
+    players: string[];
 }
 
 const ResultsHeaders: React.FC<ResultsProps> = (props: ResultsProps) => {
-    const results = props.results;
+    const players = props.players;
     return <thead>
     <tr>
       <th>Match</th>
@@ -15,7 +14,7 @@ const ResultsHeaders: React.FC<ResultsProps> = (props: ResultsProps) => {
       <th>Team 2</th>
       <th>Result</th>
       {
-        results.players.map((playerName) => {
+        players.map((playerName) => {
           return <th key={playerName}>{playerName}</th>;
         })
       }

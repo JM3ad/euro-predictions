@@ -1,8 +1,9 @@
 export interface Game {
-    round: string;
+    stage: string;
+    description: string;
     time: string;
     teamA: string;
     teamB: string;
     predictions: string[];
     result: string;
-  }
+}

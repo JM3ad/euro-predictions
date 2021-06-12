@@ -3,6 +3,7 @@ import ScoreService, { PredictionResult } from 'app/service/score-service';
 import ResultsHeaders from './results-headers';
 import { Results } from 'app/models/Results';
 import { Game } from 'app/models/Game';
+import { groupBy } from 'lodash';
 
 export type ResultsProps = {
     results: Results;
@@ -29,7 +30,7 @@ const GameRow: React.FC<GameRowProps> = (props: GameRowProps) => {
     }
   }
   return <>
-    <td>{game.round}</td>
+    <td>{game.description}</td>
     <td>{game.time}</td>
     <td>{game.teamA}</td>
     <td>{game.teamB}</td>
@@ -44,18 +45,31 @@ const GameRow: React.FC<GameRowProps> = (props: GameRowProps) => {
 
 const AllResults: React.FC<ResultsProps> = (props: {results: Results}) => {
     const results = props.results;
+    const gamesGroupedByStage = groupBy(results.games, (game: Game) => game.stage);
 
     return <div className="table-wrapper">
-      <table className="results-table">
-        <ResultsHeaders results={results}/>
-        <tbody>
-          {results.games.map((game, outerIndex) => {
-            return <tr key={outerIndex}>
-              <GameRow game={game} />
-            </tr>
-          })}
-        </tbody>
-      </table>
+      {
+        Object.entries(gamesGroupedByStage).map((entry: [stage: string, games: Game[]]) => {
+          const stage = entry[0];
+          const games = entry[1];
+          const aGameHasBeenPlayed = games.some((game) => game.result);
+          const allGamesHaveBeenPlayed = games.every((game) => game.result);
+
+          return <details key={stage} open={aGameHasBeenPlayed && !allGamesHaveBeenPlayed}>
+            <summary>{stage}</summary>
+            <table className="results-table">
+              <ResultsHeaders players={results.players}/>
+              <tbody>
+                {games.map((game, outerIndex) => {
+                  return <tr key={outerIndex}>
+                    <GameRow game={game} />
+                  </tr>
+                })}
+              </tbody>
+            </table>
+          </details>
+        })
+      }
     </div>;
   };
   
