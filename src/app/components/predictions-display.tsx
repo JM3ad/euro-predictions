@@ -13,10 +13,10 @@ const PredictionsDisplay: React.FC<PredictionsProps> = (props: PredictionsProps)
     const scoreService = new ScoreService();
     const scores = scoreService.determinePoints(results);
   
-    return <div>
+    return <>
       <ScoreDisplay scores={scores} />
       <AllResults results={results} />
-    </div>;
+    </>;
 };
 
 export default PredictionsDisplay;

@@ -32,6 +32,7 @@ const PredictionsPage: React.FC = () => {
         setResults(results)
       }).catch(() => {
         logOut();
+        console.warn("Issue loading results, logging you out")
       })
     }
   }, [token])
