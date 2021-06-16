@@ -47,13 +47,15 @@ const PredictionsPage: React.FC = () => {
     <div className="App">
         {results && loggedIn
           ? <PredictionsDisplay results={results} />
-          : <GoogleLogin 
-          clientId={clientId}
-          buttonText="Login"
-          onSuccess={successGoogle}
-          onFailure={failGoogle}
-          cookiePolicy={'single_host_origin'}
-          scope={"https://www.googleapis.com/auth/spreadsheets.readonly"} />
+          : <div className="login-wrapper">
+            <GoogleLogin 
+            clientId={clientId}
+            buttonText="Login"
+            onSuccess={successGoogle}
+            onFailure={failGoogle}
+            cookiePolicy={'single_host_origin'}
+            scope={"https://www.googleapis.com/auth/spreadsheets.readonly"} />
+          </div>
         }
     </div>
   );

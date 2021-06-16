@@ -104,3 +104,11 @@ summary {
 details {
   margin: 1rem 0;
 }
+
+.login-wrapper {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
